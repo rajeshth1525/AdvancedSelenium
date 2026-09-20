@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="BatchSuite">
+
+<!-- Smoke Suite-->
+  <test thread-count="5" name="SmokeTest">
+    <classes>
+      <class name="Smoke_RegressionTest.AddProdToCartTest"></class>
+      <class name="Smoke_RegressionTest.LockedUserLoginTest"></class>
+    </classes>
+  </test> <!-- Test -->
+  
+  <!-- Regresshion Suite-->
+ <test thread-count="5" name="RegrssionTest">
+  <classes>
+     <class name="Smoke_RegressionTest.HandlingDropDownLowProdTest"></class>
+     <class name="Smoke_RegressionTest.HandlingDropdownZtoATest"></class>
+     <class name="Smoke_RegressionTest.MultipleProductsAddToCartTest"></class>
+  </classes>
+ </test>
+  
+ 
+</suite> <!-- Suite -->

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ExtentReportSuite">
+<listeners>
+<listener class-name="ListenerUtility.ExtentReportListener"></listener>
+</listeners>
+  <test thread-count="5" name="SaouceDemoTest">
+    <classes>
+      <class name="ExtentReportTest.AddProdToCart"/>
+      <class name="ExtentReportTest.HandlingDropDownLowProd"></class>
+      <class name="ExtentReportTest.HandlingDropdownZtoATest"></class>
+      <class name="ExtentReportTest.MultipleProductsAddToCart"></class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

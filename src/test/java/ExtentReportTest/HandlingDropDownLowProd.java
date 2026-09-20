@@ -1,0 +1,49 @@
+package ExtentReportTest;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.SkipException;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+import ListenerBaseTest.BaseClass2;
+
+@Listeners(ListenerUtility.ExtentReportListener.class)
+
+public class HandlingDropDownLowProd extends BaseClass2{
+	@Test
+	public void HandlingDropDownLowProdTest()
+	{
+		//dropdown handle
+		WebElement DropDown = driver.findElement(By.className("product_sort_container"));
+		Select s =new Select(DropDown);
+		s.selectByIndex(2);
+		
+		//Add First product After Low price Selection
+		driver.findElement(By.xpath("//div[text()='Sauce Labs Onesie']")).click();
+		driver.findElement(By.id("add-to-cart")).click();
+		driver.findElement(By.className("shopping_cart_link")).click();
+		
+		//Validation
+		String cartitem = driver.findElement(By.xpath("//div[text()='Sauce Labs Onesie']")).getText();
+		if(cartitem.contains("Sauce Labs Onesie"))
+		{
+			System.out.println("Pass:First Low product Added SUccessfully");
+		}
+		else {
+			System.out.println("Faile:Diffrent product added");
+		}
+		
+		
+	}
+	
+	@Test
+	public void skippedTest()
+	{
+		throw new SkipException("This product is skipped");
+	}
+	
+
+}

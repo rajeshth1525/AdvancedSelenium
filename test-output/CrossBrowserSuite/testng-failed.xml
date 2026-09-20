@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [CrossBrowserSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="EdgeTest(failed)">
+    <parameter name="BROWSER" value="edge"/>
+    <parameter name="PASSWORD" value="secret_sauce"/>
+    <parameter name="USERNAME" value="standard_user"/>
+    <parameter name="URL" value="https://www.saucedemo.com/"/>
+    <classes>
+      <class name="Smoke_RegressionTest.LockedUserLoginTest">
+        <methods>
+          <include name="LockedUserLogin"/>
+          <include name="logout"/>
+          <include name="lounchApp"/>
+          <include name="closeBrowser"/>
+          <include name="aftersuite"/>
+          <include name="beforeTest"/>
+          <include name="beforesuite"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- Smoke_RegressionTest.LockedUserLoginTest -->
+      <class name="Smoke_RegressionTest.AddProdToCartTest">
+        <methods>
+          <include name="logout"/>
+          <include name="AddProdToCart"/>
+          <include name="lounchApp"/>
+          <include name="closeBrowser"/>
+          <include name="aftersuite"/>
+          <include name="beforeTest"/>
+          <include name="beforesuite"/>
+          <include name="loginApp"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- Smoke_RegressionTest.AddProdToCartTest -->
+    </classes>
+  </test> <!-- EdgeTest(failed) -->
+  <test thread-count="5" name="FireFoxTest(failed)">
+    <parameter name="BROWSER" value="firefox"/>
+    <parameter name="PASSWORD" value="secret_sauce"/>
+    <parameter name="USERNAME" value="standard_user"/>
+    <parameter name="URL" value="https://www.saucedemo.com/"/>
+    <classes>
+      <class name="Smoke_RegressionTest.MultipleProductsAddToCartTest">
+        <methods>
+          <include name="MultipleProductsAddToCart"/>
+          <include name="logout"/>
+          <include name="closeBrowser"/>
+          <include name="lounchApp"/>
+          <include name="aftersuite"/>
+          <include name="beforeTest"/>
+          <include name="beforesuite"/>
+          <include name="loginApp"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- Smoke_RegressionTest.MultipleProductsAddToCartTest -->
+      <class name="Smoke_RegressionTest.HandlingDropDownLowProdTest">
+        <methods>
+          <include name="logout"/>
+          <include name="closeBrowser"/>
+          <include name="lounchApp"/>
+          <include name="aftersuite"/>
+          <include name="beforeTest"/>
+          <include name="HandlingDropDownLowProd"/>
+          <include name="beforesuite"/>
+          <include name="loginApp"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- Smoke_RegressionTest.HandlingDropDownLowProdTest -->
+      <class name="Smoke_RegressionTest.HandlingDropdownZtoATest">
+        <methods>
+          <include name="HandlingDropdownZtoA"/>
+          <include name="logout"/>
+          <include name="closeBrowser"/>
+          <include name="lounchApp"/>
+          <include name="aftersuite"/>
+          <include name="beforeTest"/>
+          <include name="beforesuite"/>
+          <include name="loginApp"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- Smoke_RegressionTest.HandlingDropdownZtoATest -->
+    </classes>
+  </test> <!-- FireFoxTest(failed) -->
+</suite> <!-- Failed suite [CrossBrowserSuite] -->
